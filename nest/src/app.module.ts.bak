@@ -1,5 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule  } from '@nestjs/mongoose';
+// import { AppController } from './app.controller';
+// import { AppService } from './app.service';
 import { ProductosModule } from './productos/productos.module';
 
 @Module({
@@ -8,6 +10,8 @@ import { ProductosModule } from './productos/productos.module';
     MongooseModule.forRoot(
       'mongodb+srv://webmazn:HqfkvcHE81bgXfNH@webmazn.yxchdlx.mongodb.net/?retryWrites=true&w=majority'
     )],
+  // controllers: [AppController],
+  // providers: [AppService],
   controllers: [],
   providers: [],
 })

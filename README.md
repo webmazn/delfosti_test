@@ -1,6 +1,6 @@
 # MAYCOL ZAMBRANO NUÑEZ
 
-## DELFOSATI
+## DELFOSTI
 Prueba práctica 
 
 ## API REST: NEST JS [Puerto: 5000]
