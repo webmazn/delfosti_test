@@ -10,8 +10,8 @@ import { ProductosService } from '../../services/productos.service';
 export class ProductoComponent implements OnInit {
 
   productos: any = [];
-  filterProducto: any = '';
   productosSuscritos: Subscription = new Subscription;
+  filterProducto: any = '';
 
   constructor(private productosService: ProductosService) {
 
@@ -25,6 +25,10 @@ export class ProductoComponent implements OnInit {
       },
       err => console.error(err)
     );
+  }
+
+  ngOnDestroy(){
+    this.productosSuscritos.unsubscribe();
   }
 
 }
