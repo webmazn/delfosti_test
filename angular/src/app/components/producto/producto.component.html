@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-3" *ngFor="let producto of productos">
+    <div class="card my-4">
+      <img src="https://delfosti.com/wp-content/uploads/2022/06/Logo-secundario.png" class="card-img-top img-fluid p-5" alt="...">
+      <div class="card-body">
+        <h5 class="card-title">{{producto.name}}</h5>
+        <p class="card-text">
+          <b>ID:</b> <span class="text-truncate">{{producto._id}}</span> <br>
+          <b>Categoria:</b> {{producto.category}} <br>
+          <b>Slug:</b> {{producto.slug}} <br>
+          <b>Fecha de creación:</b> {{producto.createdAt | date:'short'}}
+        </p>
+        <button class="btn btn-primary">Acción</button>
+      </div>
+    </div>
+  </div>
+</div>

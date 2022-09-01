@@ -19,29 +19,61 @@ export class ProductosService {
   constructor(
     @InjectModel('Productos') private productosModel: Model<Producto>
   ){
+
   }
 
   async create(createProductoDto: CreateProductoDto): Promise<Producto> {
+    // // // console.log(`${createProductoDto}`);
+    // // // console.log({createProductoDto});
+    // // const producto = new Producto();
+    // // producto.id = Math.max( ...this.productos.map( producto => producto.id),0 ) + 1;
+    // // producto.name = createProductoDto.name
+    // // producto.category = createProductoDto.category
+    // // producto.slug = createProductoDto.slug
+    // // this.productos.push(producto);
+    // // // return 'This action adds a new producto';
+    // // return producto;
     const producto = new this.productosModel(createProductoDto);
     return await producto.save();
   }
 
   async findAll(): Promise<Producto[]> {
+    // return `This action returns all productos`;
+    // // return this.productos;
     const productos = await this.productosModel.find()
     return productos;
   }
 
   async findOne(id: string): Promise<Producto> {
+    // // const producto = this.productos.find( producto => producto.id === id);
+    // // if ( !producto ) throw new NotFoundException(`Producto con id: ${id} no encontrado`)
+    // return `This action returns a #${id} producto`;
+    // // return producto;
     const producto = await this.productosModel.findById(id);
     return producto;
   }
 
   async update(id: string, updateProductoDto: UpdateProductoDto): Promise<Producto> {
+    // // const { name, category, slug } = updateProductoDto
+    // // const producto = this.findOne( id );
+    // // if( name ) producto.name = name
+    // // if( category ) producto.category = category
+    // // if( slug) producto.slug = slug
+
+    // // this.productos = this.productos.map( dbProductos => {
+    // //   if( dbProductos.id === id) return producto;
+    // //   return dbProductos;
+    // // })
+    // return `This action updates a #${id} producto`;
+    // // return producto;
     const productoActualizado = await this.productosModel.findByIdAndUpdate(id, updateProductoDto, {new: true})
     return productoActualizado;
   }
 
   async remove(id: string): Promise<Producto> {
+    // // this.findOne( id );
+    // // this.productos = this.productos.filter( producto => producto.id !== id)
+    // return `This action removes a #${id} producto`;
     const productoEliminado = await this.productosModel.findByIdAndDelete(id);
     return productoEliminado;
   }

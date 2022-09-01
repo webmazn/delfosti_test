@@ -3,11 +3,12 @@
 ## DELFOSATI
 Prueba práctica 
 
-## API REST: NEST JS
+## API REST: NEST JS [Puerto: 5000]
 
 Se añadió paquetes para validacion en los DTO:
 "class-transformer": "^0.5.1",
 "class-validator": "^0.13.2",
+Se añadió CORS
 
 ## DATA BASE 
 
