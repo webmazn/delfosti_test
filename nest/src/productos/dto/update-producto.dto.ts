@@ -1,5 +1,5 @@
 import { PartialType } from '@nestjs/mapped-types';
-import { IsNotEmpty, IsOptional, IsString } from 'class-validator';
+import { IsDate, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 import { CreateProductoDto } from './create-producto.dto';
 
 export class UpdateProductoDto extends PartialType(CreateProductoDto) {
@@ -18,4 +18,9 @@ export class UpdateProductoDto extends PartialType(CreateProductoDto) {
     @IsNotEmpty()
     @IsOptional()
     slug?: string;
+
+    // @IsDate()
+    // @IsNotEmpty()
+    // @IsOptional()
+    createdAt?: Date;
 }

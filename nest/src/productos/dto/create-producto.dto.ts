@@ -1,4 +1,4 @@
-import { IsNotEmpty, IsString } from "class-validator";
+import { IsDate, IsNotEmpty, IsString } from "class-validator";
 
 export class CreateProductoDto {
 
@@ -12,5 +12,9 @@ export class CreateProductoDto {
 
     @IsString()
     @IsNotEmpty()
-    slug: string;    
+    slug: string;
+
+    // @IsDate()
+    // @IsNotEmpty()
+    createdAt: Date;
 }

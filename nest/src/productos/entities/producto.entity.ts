@@ -3,4 +3,5 @@ export class Producto {
     name: string;
     category: string;
     slug: string;
+    createdAt: Date;
 }
